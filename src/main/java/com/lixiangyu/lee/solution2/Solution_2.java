@@ -2,7 +2,7 @@ package com.lixiangyu.lee.solution2;
 
 /**
  * @program: leecode
- * @description: leecode_2
+ * @description: Add Two Numbers
  * @author: lixiangyu
  * @create: 2018-10-22 17:56
  **/
