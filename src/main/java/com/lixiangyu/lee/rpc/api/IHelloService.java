@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.rpcdemo;
+package com.lixiangyu.lee.rpc.api;
 
 public interface IHelloService {
 

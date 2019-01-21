@@ -1,6 +1,6 @@
-package com.lixiangyu.lee.rpcdemo.client;
+package com.lixiangyu.lee.rpc.client;
 
-import com.lixiangyu.lee.rpcdemo.dto.RpcRequest;
+import com.lixiangyu.lee.rpc.api.dto.RpcRequest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -22,6 +22,8 @@ public class ClientHandler implements InvocationHandler {
         rpcRequest.setParamTypes(method.getParameterTypes());
         rpcRequest.setArgs(args);
 
+        NettyClient nettyClient = new NettyClient("127.0.0.1", 10000, rpcRequest);
+        nettyClient.link();
 
         return null;
     }

@@ -1,17 +1,15 @@
-package com.lixiangyu.lee.rpcdemo.impl;
+package com.lixiangyu.lee.rpc.demo.server.service.impl;
 
-import com.lixiangyu.lee.rpcdemo.IHelloService;
-import com.lixiangyu.lee.rpcdemo.RpcService;
-import org.springframework.stereotype.Service;
+import com.lixiangyu.lee.rpc.api.IHelloService;
+import com.lixiangyu.lee.rpc.api.RpcService;
 
 /**
  * @program: leecode
  * @description:
  * @author: lixiangyu
- * @create: 2019-01-20 16:21
+ * @create: 2019-01-21 10:38
  **/
 @RpcService("HelloServiceImpl")
-@Service
 public class HelloServiceImpl implements IHelloService {
     @Override
     public String say() {

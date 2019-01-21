@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.rpcdemo;
+package com.lixiangyu.lee.rpc.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

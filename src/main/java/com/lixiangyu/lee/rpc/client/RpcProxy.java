@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.rpcdemo.client;
+package com.lixiangyu.lee.rpc.client;
 
 import java.lang.reflect.Proxy;
 
@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
 public class RpcProxy {
 
     public <T> T create(Class<?> clazz) {
-        return (T)Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new ClientHandler());
+        return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new ClientHandler());
     }
 
 }
