@@ -4,6 +4,7 @@ import com.lixiangyu.lee.rpc.api.dto.RpcRequest;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -39,7 +40,7 @@ public class NettyClient {
                 final ChannelPipeline pipeline = ch.pipeline();
                 pipeline.addLast(new NettyClientHandler(rpcRequest));
             }
-        });
+        }).option(ChannelOption.SO_KEEPALIVE, true);
         try {
 
             final ChannelFuture sync = bootstrap.bind(address, port).sync();

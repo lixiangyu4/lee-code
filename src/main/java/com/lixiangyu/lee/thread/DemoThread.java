@@ -6,5 +6,9 @@ package com.lixiangyu.lee.thread;
  * @author: lixiangyu
  * @create: 2019-01-22 13:55
  **/
-public class DemoThread {
+public class DemoThread implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("aa");
+    }
 }

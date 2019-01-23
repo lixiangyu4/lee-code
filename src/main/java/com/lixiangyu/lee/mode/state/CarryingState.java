@@ -1,8 +1,8 @@
-package com.lixiangyu.lee.mode;
+package com.lixiangyu.lee.mode.state;
 
 /**
  * @program: leecode
- * @description:
+ * @description: 状态模式
  * @author: lixiangyu
  * @create: 2019-01-22 19:55
  **/

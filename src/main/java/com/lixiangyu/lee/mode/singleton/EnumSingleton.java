@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.mode;
+package com.lixiangyu.lee.mode.singleton;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
@@ -6,7 +6,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
 import java.util.concurrent.TimeUnit;
 
-public enum State {
+
+/**
+ * 单例设计模式
+ */
+public enum EnumSingleton {
     /**
      *
      */
@@ -14,13 +18,15 @@ public enum State {
         @Override
         public Thread newThread(Runnable r) {
             Thread thread = new Thread(r);
+            thread.setName("aa");
             return thread;
         }
     }, new CallerRunsPolicy()));
 
     private ThreadPoolExecutor executor;
 
-    State(ThreadPoolExecutor executor) {
+    EnumSingleton(ThreadPoolExecutor executor) {
         this.executor = executor;
     }
+
 }
