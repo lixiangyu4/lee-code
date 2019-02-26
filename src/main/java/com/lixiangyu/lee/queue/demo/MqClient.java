@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.queue;
+package com.lixiangyu.lee.queue.demo;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

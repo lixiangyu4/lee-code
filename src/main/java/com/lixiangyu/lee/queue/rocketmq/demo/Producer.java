@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.queue.rocketmq;
+package com.lixiangyu.lee.queue.rocketmq.demo;
 
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.queue.rocketmq;
+package com.lixiangyu.lee.queue.rocketmq.demo;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;

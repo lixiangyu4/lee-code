@@ -27,7 +27,7 @@ public class Main {
         Object person = annotationConfigApplicationContext.getBean("person");
         System.out.println(person);
 //        String osname = annotationConfigApplicationContext.getEnvironment().getProperty("os.name");
-//        printBean();
+        printBean();
 //        System.out.println(osname);
         annotationConfigApplicationContext.close();
     }
