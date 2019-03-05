@@ -8,7 +8,13 @@ package com.lixiangyu.lee.arithmetic;
  **/
 public class BinaryOrder {
 
-    private static int rank(int i, int[] a) {
+    /**
+     * 二分查找普通实现
+     * @param i
+     * @param a 有序数组
+     * @return
+     */
+    private static int rank(int[] a, int i) {
 
         int lo = 0;
         int hi = a.length - 1;
@@ -23,12 +29,39 @@ public class BinaryOrder {
             }
         }
         return -1;
+    }
+
+    /**
+     * 二分法查找 递归实现
+     * @param a 有序数组
+     * @param start
+     * @param end
+     * @param i
+     * @return
+     */
+    private static int recursion(int[] a, int start, int end, int i) {
+
+        int mid = (start + end) / 2 + start;
+
+        if(a[mid] == i) {
+            return mid;
+        }
+
+        if(start <= end ) {
+            return -1;
+        } else if (i > a[mid]) {
+            recursion(a, mid+1, end,  i);
+        } else if (i < a[mid]) {
+            recursion(a, start, mid,  i);
+        }
+        return -1;
 
     }
 
     public static void main(String[] args) {
         int a[] = {1,2,3,4,5,6,8};
-        System.out.println(rank(4, a));
+//        System.out.println(rank(a, 4));
+        System.out.println(recursion(a, 0, a.length, 4));
     }
 
 }
