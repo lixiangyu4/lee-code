@@ -22,6 +22,9 @@ public class Main {
         System.out.println(objectSerializera.getSchemeName());
 
 
+
+
+
     }
 
 }
