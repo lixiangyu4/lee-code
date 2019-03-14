@@ -12,12 +12,12 @@ import java.util.Map;
 public class Java8Test {
 
     public static void main(String[] args) {
-        Map<String , String> map  = new HashMap<>();
+        Map<String , String> map  = new HashMap<>(4);
         map.put("1", "a");
-        map.put("2", "b");
-        map.put("3", "c");
-        map.put("4", "d");
-        map.put("5", "e");
+//        map.put("2", "b");
+////        map.put("3", "c");
+////        map.put("4", "d");
+////        map.put("5", "e");
         System.out.println(map.toString());
     }
 
