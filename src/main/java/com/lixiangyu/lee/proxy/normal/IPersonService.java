@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.proxy;
+package com.lixiangyu.lee.proxy.normal;
 
 public interface IPersonService {
 

@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.proxy;
+package com.lixiangyu.lee.proxy.normal;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

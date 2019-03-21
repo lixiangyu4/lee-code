@@ -7,24 +7,21 @@ import java.lang.reflect.Method;
 
 /**
  * @program: leecode
- * @description:
+ * @description: 不需要事先创建要代理的对象
  * @author: lixiangyu
- * @create: 2019-03-21 16:27
+ * @create: 2019-03-21 16:29
  **/
-public class JavassistProxyFactory<T>  {
+public class JavassistProxyFactory02 {
 
-    private T target;
-
-    public void setTarget(T target) {
-        this.target = target;
-    }
-
-    @SuppressWarnings( "deprecation")
-    public T getProxy() throws InstantiationException, IllegalAccessException {
+    /*
+     * 要代理的对象的class
+     * */
+    @SuppressWarnings("deprecation")
+    public Object getProxy(Class clazz) throws InstantiationException, IllegalAccessException {
         // 代理工厂
         ProxyFactory proxyFactory = new ProxyFactory();
         // 设置需要创建子类的父类
-        proxyFactory.setSuperclass(target.getClass());
+        proxyFactory.setSuperclass(clazz);
         /*
          * 定义一个拦截器。在调用目标方法时，Javassist会回调MethodHandler接口方法拦截，
          * 来实现你自己的代理逻辑，
@@ -48,16 +45,12 @@ public class JavassistProxyFactory<T>  {
                 System.out.println("--------------------------------");
                 System.out.println(self.getClass());
                 //class com.javassist.demo.A_$$_javassist_0
-                System.out.println("要调用的方法名："+thismethod.getName());
-                System.out.println(proceed.getName());
-                System.out.println("开启事务-------");
+                System.out.println("代理类对方法的代理引用:"+thismethod.getName());
+                System.out.println("开启事务 -------");
 
                 Object result = proceed.invoke(self, args);
-                //下面的代码效果与上面的相同
-                //不过需要传入一个目标对象
-                //Object result = thismethod.invoke(target,args);
 
-                System.out.println("提交事务-------");
+                System.out.println("提交事务 -------");
                 return result;
             }
         });
@@ -66,7 +59,7 @@ public class JavassistProxyFactory<T>  {
 
 
         // 通过字节码技术动态创建子类实例
-        return (T) proxyFactory.createClass().newInstance();
+        return  proxyFactory.createClass().newInstance();
     }
 
 }
