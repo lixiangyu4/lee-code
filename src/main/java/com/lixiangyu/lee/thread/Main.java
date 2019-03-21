@@ -1,9 +1,5 @@
 package com.lixiangyu.lee.thread;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.TreeSet;
-
 /**
  * @program: leecode
  * @description:
@@ -25,18 +21,20 @@ public class Main {
 //        }
 //        System.out.println(num);
 
-        TreeSet<String> treeSet = new TreeSet<>(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.hashCode() - o2.hashCode();
-            }
-        });
+//        TreeSet<String> treeSet = new TreeSet<>(new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return o1.hashCode() - o2.hashCode();
+//            }
+//        });
+//
+//        treeSet.add("ccc");
+//        treeSet.add("bbb");
+//        treeSet.add("aaa");
+//
+//        System.out.println(Arrays.toString(treeSet.toArray()));
 
-        treeSet.add("ccc");
-        treeSet.add("bbb");
-        treeSet.add("aaa");
 
-        System.out.println(Arrays.toString(treeSet.toArray()));
 
 
     }

@@ -4,6 +4,7 @@ import com.lixiangyu.lee.map.Person;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
  * @program: leecode
@@ -26,6 +27,14 @@ public class Java8ConcurrentTest {
         map.put(new Person("9", "a"), "a");
         System.out.println(map);
         System.out.println(map.size());
+
+        String str = new String("");
+        AtomicStampedReference<String> atomicStampedReference = new AtomicStampedReference(str, 1);
+
+        ThreadLocal<String> stringThreadLocal = new ThreadLocal<>();
+        Thread thread = new Thread();
+
+
     }
 
 }

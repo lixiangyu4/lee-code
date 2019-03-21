@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.solution2;
+package com.lixiangyu.lee.solution;
 
 /**
  * @program: leecode
@@ -38,5 +38,13 @@ public class Solution_2 {
     public static void main(String[] args) {
     }
 
+
+    public class ListNode {
+
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+
+    }
 
 }

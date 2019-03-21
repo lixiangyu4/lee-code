@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.solution3;
+package com.lixiangyu.lee.solution;
 
 import java.util.HashMap;
 import java.util.Map;

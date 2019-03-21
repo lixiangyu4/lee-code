@@ -1,4 +1,4 @@
-package com.lixiangyu.lee.solution4;
+package com.lixiangyu.lee.solution;
 
 /**
  * @program: leecode
