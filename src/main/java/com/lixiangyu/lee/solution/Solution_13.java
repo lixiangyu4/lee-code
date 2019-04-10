@@ -1,8 +1,5 @@
 package com.lixiangyu.lee.solution;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @program: leecode
  * @description: Roman to Integer
@@ -17,15 +14,6 @@ public class Solution_13 {
 
     public static int romanToInt(String s) {
 
-        String[] romans = {"M", "CM", "D", "CD",  "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int[] nums =      {1000, 900, 500, 400,  100,  90,   50,  40,   10,   9,   5,    4 ,  1};
-
-
-        Map<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < romans.length; i++) {
-            map.put(romans[i], nums[i]);
-        }
-
         int length = s.length();
         int num = 0;
 
@@ -35,14 +23,49 @@ public class Solution_13 {
             if(i+1 < length) {
                 c2 = s.charAt(i+1) + "";
             }
-            if(map.keySet().contains(c1+c2)) {
-                num += map.get(c1+c2);
+            if(toInt(c1 + c2) != -1) {
+                num += toInt(c1 + c2);
                 i++;
-            } else if(map.keySet().contains(c1)) {
-                num += map.get(c1);
+            } else if(toInt(c1) != -1) {
+                num += toInt(c1);
             }
         }
         return num;
+
+    }
+
+    private static int toInt(String c) {
+        switch (c) {
+            case "M" :
+                return 1000;
+            case "CM" :
+                return 900;
+            case "D" :
+                return 500;
+            case "CD" :
+                return 400;
+            case "C" :
+                return 100;
+            case "XC" :
+                return 90;
+            case "L" :
+                return 50;
+            case "XL" :
+                return 40;
+            case "X" :
+                return 10;
+            case "IX" :
+                return 9;
+            case "V" :
+                return 5;
+            case "IV" :
+                return 4;
+            case "I" :
+                return 1;
+            default:
+                return -1;
+        }
+
 
     }
 

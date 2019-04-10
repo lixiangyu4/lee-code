@@ -18,18 +18,18 @@ public class HeapMemory {
      * @param args
      */
     public static void main(String[] args) {
-//        while (true) {
-//            list.add(new String("aaa"));
-//        }
-        C c1 = new C();
-        C c2 = new C();
-        c1.a = c2;
-        c1.a = c2;
-
-        c1 = null;
-        c2 = null;
-
-        System.gc();
+        while (true) {
+            list.add(new String("aaa"));
+        }
+//        C c1 = new C();
+//        C c2 = new C();
+//        c1.a = c2;
+//        c1.a = c2;
+//
+//        c1 = null;
+//        c2 = null;
+//
+//        System.gc();
 
     }
 
