@@ -14,11 +14,9 @@ public class Solution_16 {
     public static int threeSumClosest(int[] nums, int target) {
 
         Arrays.sort(nums);
-
         if(nums.length == 3) {
             return nums[0] + nums[1] + nums[2];
         }
-
         int result = nums[0] + nums[1] + nums[nums.length-1];
 
         for (int i = 0; i < nums.length - 2; i++) {
@@ -38,7 +36,6 @@ public class Solution_16 {
                     }
                     lo++;
                 }
-
                 if (Math.abs(result - target) > Math.abs(sum - target)) {
                     result = sum;
                 }
