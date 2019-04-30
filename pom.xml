@@ -64,9 +64,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
             <version>1.5.15.RELEASE</version>
         </dependency>
+
 
         <dependency>
             <groupId>junit</groupId>
@@ -121,6 +122,25 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
             <version>7.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>1.5.15.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+            <version>8.1.1</version>
         </dependency>
 
 
