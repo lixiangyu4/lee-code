@@ -1,7 +1,5 @@
 package com.lixiangyu.lee.map;
 
-import java.util.Objects;
-
 /**
  * @program: leecode
  * @description:
@@ -34,17 +32,17 @@ public class Person {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
-        return Objects.equals(getId(), person.getId()) &&
-            Objects.equals(getName(), person.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return 1;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Person)) return false;
+//        Person person = (Person) o;
+//        return Objects.equals(getId(), person.getId()) &&
+//            Objects.equals(getName(), person.getName());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 1;
+//    }
 }

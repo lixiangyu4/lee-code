@@ -1,5 +1,8 @@
 package com.lixiangyu.lee.thread.singleton;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -31,5 +34,22 @@ public class ThreadPoolSingleton {
     public static ThreadPoolExecutor getInstance() {
         return ThreadPoolSingletonInner.threadPoolExecutor;
     }
+
+    /**
+     * 优雅关闭线程池
+     * @param args
+     */
+    public static void main(String[] args) {
+        //获取java 线程管理MXBean
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+        //不需要获取同步的monitor 和synchronizer 信息，仅获取线程和线程堆栈信息
+        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
+        for (ThreadInfo info : threadInfos) {
+            System.out.println( "[ " + info.getThreadId() + " ] " + info.getThreadName());
+        }
+
+
+    }
+
 
 }
