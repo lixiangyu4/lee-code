@@ -11,17 +11,28 @@ import java.util.List;
  **/
 public class Test {
 
-    public static void main(String[] args) {
-//        System.out.println("=========运行成功======");
-//        String str = "a,b,c,d";
-//        StringTokenizer stringTokenizer = new StringTokenizer(str, ",");
-//        while (stringTokenizer.hasMoreTokens()) {
-//            System.out.println(stringTokenizer.nextToken());
-//        }
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i< 10000000; i++) {
-            list.add(new String("aaa"));
-        }
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            try {
+                System.out.println("thread begin");
+                Thread.sleep(1000000000);
+            } catch (InterruptedException e) {
+                System.out.println("thread is isInterrupted");
+                return ;
+            }
+            System.out.println("thread-leaving normal");
+        });
+        thread.start();
+
+        Thread.sleep(100);
+
+        thread.interrupt();
+        thread.isInterrupted();
+        thread.join();
+
+
+        System.out.println("main is over");
+
     }
 
 }

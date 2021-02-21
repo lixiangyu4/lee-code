@@ -1,5 +1,6 @@
 package com.lixiangyu.lee.thread.aqs;
 
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -10,21 +11,39 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class ReentrantLockTest {
 
-    private static ReentrantLock lock = new ReentrantLock();
-
 
     public static void main(String[] args) {
+        ReentrantLock lock = new ReentrantLock();
+        Condition condition = lock.newCondition();
 
-        for (int i = 0; i < 2; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(Thread.currentThread().getName() + ":开始获取当前锁");
-                    lock.lock();
-                    System.out.println(Thread.currentThread().getName() + ":获取成功");
-                }
-            }).start();
-        }
+
+       new Thread(() -> {
+            lock.lock();
+            try {
+                System.out.println("begin wait");
+                condition.await();
+                System.out.println("end wait");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                System.out.println("wait unlock");
+                lock.unlock();
+            }
+        }).start();
+
+        new Thread(() -> {
+            lock.lock();
+            try {
+                System.out.println("begin signal");
+                condition.signal();
+                System.out.println("end signal");
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                System.out.println("signal unlock");
+                lock.unlock();
+            }
+        }).start();
 
 
 
