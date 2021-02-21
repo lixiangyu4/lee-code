@@ -14,7 +14,7 @@ public class StampedLockTest {
     private final StampedLock sl = new StampedLock();
 
     /**
-     *  写锁
+     *  排他锁-写锁
      * @param deltaX
      * @param deltaY
      */
@@ -33,17 +33,20 @@ public class StampedLockTest {
      * @return
      */
     double distanceFromOrigin() {
+        //尝试获取乐观读锁
         long stamp = sl.tryOptimisticRead();
+        //将全部变量复制到方法体栈内
         double currentX = x, currentY = y;
-        //检查发出乐观读锁后同时是否有其他写锁发生？
+        //检查在上面获取了读锁戳记后，锁没有被其他写线程排他性抢占
         if (!sl.validate(stamp)) {
-            //如果有，我们再次获得一个读悲观锁
+            //如果被抢占则获取一个共享读锁（悲观获取）
             stamp = sl.readLock();
             try {
                 //将变量保存在本地栈中
                 currentX = x;
                 currentY = y;
             } finally {
+                //释放共享读锁
                 sl.unlockRead(stamp);
             }
         }
@@ -51,19 +54,19 @@ public class StampedLockTest {
     }
 
     /**
-     * 悲观读锁 -- 读锁升级成写锁
+     * 使用悲观锁获取读锁，并尝试转换为写锁
      * @param newX
      * @param newY
      */
     void moveIfAtOrigin(double newX, double newY) {
-        // Could instead start with optimistic, not read mode
+        // 这里可以使用乐观锁替换
         long stamp = sl.readLock();
         try {
-            //循环，检查当前状态是否符合
+            //如果当前在原点则移动
             while (x == 0.0 && y == 0.0) {
-                //将读锁转为写锁
+                //尝试将读锁转为写锁
                 long ws = sl.tryConvertToWriteLock(stamp);
-                //成功转换为写锁
+                //成功转换为写锁，则更新戳记，并设置坐标值，然后退出循环
                 if (ws != 0L) {
                     //如果成功 替换票据
                     stamp = ws;
@@ -71,13 +74,13 @@ public class StampedLockTest {
                     y = newY;
                     break;
                 } else {
-                    //显示释放读锁
+                    //读锁升级写锁失败则释放读锁，显示获取独占写锁，然后循环重试
                     sl.unlockRead(stamp);
-                    //显示直接进行写锁,然后通过循环再试
                     stamp = sl.writeLock();
                 }
             }
         } finally {
+            //释放锁
             sl.unlock(stamp);
         }
     }
