@@ -20,10 +20,14 @@ public class FutureDemoMainTest {
         ThreadPoolExecutor instance = ThreadPoolSingleton.getInstance();
         FutureDemo demoThread = new FutureDemo(num);
         Future<Integer> submit = null;
-        for (int i = 0 ; i < 100; i++) {
-            submit = instance.submit(demoThread);
-        }
-        instance.shutdown();
+//        for (int i = 0 ; i < 100; i++) {
+//            submit = instance.submit(demoThread);
+//        }
+
+        submit = instance.submit(demoThread);
+
+//        instance.shutdown();
+        System.out.println(submit.isDone());
         System.out.println(submit.get());
     }
 

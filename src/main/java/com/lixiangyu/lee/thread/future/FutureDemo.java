@@ -19,7 +19,8 @@ public class FutureDemo implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        return num.incrementAndGet();
+        throw  new IllegalStateException();
+//        return num.incrementAndGet();
     }
 
 }

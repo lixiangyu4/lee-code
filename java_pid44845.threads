@@ -1,0 +1,260 @@
+Thread 0x7bf942b58
+  at java.lang.OutOfMemoryError.<init>()V (OutOfMemoryError.java:48)
+  at sun.util.resources.TimeZoneNames.getContents()[[Ljava/lang/Object; (TimeZoneNames.java:285)
+  at sun.util.resources.OpenListResourceBundle.loadLookup()V (OpenListResourceBundle.java:137)
+  at sun.util.resources.OpenListResourceBundle.loadLookupTablesIfNecessary()V (OpenListResourceBundle.java:128)
+  at sun.util.resources.OpenListResourceBundle.handleKeySet()Ljava/util/Set; (OpenListResourceBundle.java:96)
+  at java.util.ResourceBundle.containsKey(Ljava/lang/String;)Z (ResourceBundle.java:1807)
+  at sun.util.locale.provider.LocaleResources.getTimeZoneNames(Ljava/lang/String;)[Ljava/lang/String; (LocaleResources.java:263)
+  at sun.util.locale.provider.TimeZoneNameProviderImpl.getDisplayNameArray(Ljava/lang/String;Ljava/util/Locale;)[Ljava/lang/String; (TimeZoneNameProviderImpl.java:124)
+  at sun.util.locale.provider.TimeZoneNameProviderImpl.getDisplayName(Ljava/lang/String;ZILjava/util/Locale;)Ljava/lang/String; (TimeZoneNameProviderImpl.java:99)
+  at sun.util.locale.provider.TimeZoneNameUtility$TimeZoneNameGetter.getName(Ljava/util/spi/TimeZoneNameProvider;Ljava/util/Locale;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String; (TimeZoneNameUtility.java:240)
+  at sun.util.locale.provider.TimeZoneNameUtility$TimeZoneNameGetter.getObject(Ljava/util/spi/TimeZoneNameProvider;Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String; (TimeZoneNameUtility.java:198)
+  at sun.util.locale.provider.TimeZoneNameUtility$TimeZoneNameGetter.getObject(Ljava/util/spi/LocaleServiceProvider;Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object; (TimeZoneNameUtility.java:184)
+  at sun.util.locale.provider.LocaleServiceProviderPool.getLocalizedObjectImpl(Lsun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter;Ljava/util/Locale;ZLjava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object; (LocaleServiceProviderPool.java:281)
+  at sun.util.locale.provider.LocaleServiceProviderPool.getLocalizedObject(Lsun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter;Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object; (LocaleServiceProviderPool.java:265)
+  at sun.util.locale.provider.TimeZoneNameUtility.retrieveDisplayNamesImpl(Ljava/lang/String;Ljava/util/Locale;)[Ljava/lang/String; (TimeZoneNameUtility.java:166)
+  at sun.util.locale.provider.TimeZoneNameUtility.retrieveDisplayName(Ljava/lang/String;ZILjava/util/Locale;)Ljava/lang/String; (TimeZoneNameUtility.java:137)
+  at java.util.TimeZone.getDisplayName(ZILjava/util/Locale;)Ljava/lang/String; (TimeZone.java:400)
+  at java.util.Date.toString()Ljava/lang/String; (Date.java:1045)
+  at java.util.Properties.store0(Ljava/io/BufferedWriter;Ljava/lang/String;Z)V (Properties.java:829)
+  at java.util.Properties.store(Ljava/io/OutputStream;Ljava/lang/String;)V (Properties.java:818)
+  at sun.misc.VMSupport.serializePropertiesToByteArray(Ljava/util/Properties;)[B (VMSupport.java:70)
+  at sun.misc.VMSupport.serializeAgentPropertiesToByteArray()[B (VMSupport.java:79)
+
+  locals:
+    objectId=0x7bf576ec8, line=1
+    objectId=0x7bf578940, line=1
+    objectId=0x7bf578ab8, line=1
+    objectId=0x7bf578cb0, line=1
+    objectId=0x7bf578da8, line=1
+    objectId=0x7bf578f40, line=1
+    objectId=0x7bf579058, line=1
+    objectId=0x7bf579248, line=1
+    objectId=0x7bf579310, line=1
+    objectId=0x7bf579430, line=1
+    objectId=0x7bf5795f0, line=1
+    objectId=0x7bf5797f8, line=1
+    objectId=0x7bf579a20, line=1
+    objectId=0x7bf579b58, line=1
+    objectId=0x7bf579cc8, line=1
+    objectId=0x7bf579e20, line=1
+    objectId=0x7bf579f88, line=1
+    objectId=0x7bf57a140, line=1
+    objectId=0x7bf57a260, line=1
+    objectId=0x7bf57a3a8, line=1
+    objectId=0x7bf57a4c0, line=1
+    objectId=0x7bf57a638, line=1
+    objectId=0x7bf57a740, line=1
+    objectId=0x7bf57a848, line=1
+    objectId=0x7bf57aa90, line=1
+    objectId=0x7bf57abc0, line=1
+    objectId=0x7bf57ad88, line=1
+    objectId=0x7bf57ae88, line=1
+    objectId=0x7bf57aff0, line=1
+    objectId=0x7bf57b138, line=1
+    objectId=0x7bf57b348, line=1
+    objectId=0x7bf57b510, line=1
+    objectId=0x7bf57b670, line=1
+    objectId=0x7bf57b760, line=1
+    objectId=0x7bf57b880, line=1
+    objectId=0x7bf57b8a8, line=1
+    objectId=0x7bf57b990, line=1
+    objectId=0x7bf57baf8, line=1
+    objectId=0x7bf57bc20, line=1
+    objectId=0x7bf57bd70, line=1
+    objectId=0x7bf57be98, line=1
+    objectId=0x7bf57c030, line=1
+    objectId=0x7bf57c150, line=1
+    objectId=0x7bf57c288, line=1
+    objectId=0x7bf57c390, line=1
+    objectId=0x7bf57c540, line=1
+    objectId=0x7bf57c688, line=1
+    objectId=0x7bf57c830, line=1
+    objectId=0x7bf57c9e0, line=1
+    objectId=0x7bf57cb20, line=1
+    objectId=0x7bf57cca0, line=1
+    objectId=0x7bf57cea8, line=1
+    objectId=0x7bf57d020, line=1
+    objectId=0x7bf57d140, line=1
+    objectId=0x7bf57d288, line=1
+    objectId=0x7bf57d3b8, line=1
+    objectId=0x7bf57d540, line=1
+    objectId=0x7bf57d6f0, line=1
+    objectId=0x7bf57d8c0, line=1
+    objectId=0x7bf57da40, line=1
+    objectId=0x7bf57db60, line=1
+    objectId=0x7bf57dcc0, line=1
+    objectId=0x7bf57ddd8, line=1
+    objectId=0x7bf57df68, line=1
+    objectId=0x7bf57e100, line=1
+    objectId=0x7bf57e250, line=1
+    objectId=0x7bf57e3e8, line=1
+    objectId=0x7bf57e588, line=1
+    objectId=0x7bf57e6e0, line=1
+    objectId=0x7bf57e818, line=1
+    objectId=0x7bf57e9f0, line=1
+    objectId=0x7bf57eb98, line=1
+    objectId=0x7bf57eda0, line=1
+    objectId=0x7bf57ef08, line=1
+    objectId=0x7bf57f0b8, line=1
+    objectId=0x7bf57f268, line=1
+    objectId=0x7bf57f400, line=1
+    objectId=0x7bf57f540, line=1
+    objectId=0x7bf57f678, line=1
+    objectId=0x7bf57f868, line=1
+    objectId=0x7bf576ec8, line=2
+    objectId=0x7bf576ec8, line=3
+    objectId=0x7bf576ec8, line=4
+    objectId=0x7bf578360, line=5
+    objectId=0x7bfa52910, line=5
+    objectId=0x7bf576ec8, line=5
+    objectId=0x7bf56b4d8, line=6
+    objectId=0x7bfa52910, line=6
+    objectId=0x7bf56bb78, line=6
+    objectId=0x7bf578360, line=6
+    objectId=0x7bf5558f8, line=7
+    objectId=0x7bfa52910, line=7
+    objectId=0x7be068c80, line=7
+    objectId=0x7bf5558f8, line=8
+    objectId=0x7bfa52910, line=8
+    objectId=0x7be068c80, line=8
+    objectId=0x7bf5558f8, line=9
+    objectId=0x7be068c80, line=9
+    objectId=0x7bf56ab50, line=9
+    objectId=0x7bfa52910, line=9
+    objectId=0x7bf56ab50, line=9
+    objectId=0x7bf56ab40, line=10
+    objectId=0x7bf5558f8, line=10
+    objectId=0x7be068c80, line=10
+    objectId=0x7bf56ab50, line=10
+    objectId=0x7bf56ab80, line=10
+    objectId=0x7bfa52910, line=10
+    objectId=0x7bf56ab40, line=11
+    objectId=0x7bf5558f8, line=11
+    objectId=0x7be068c80, line=11
+    objectId=0x7bf56ab50, line=11
+    objectId=0x7bf56ab80, line=11
+    objectId=0x7bf551df0, line=12
+    objectId=0x7bf56ab40, line=12
+    objectId=0x7be068c80, line=12
+    objectId=0x7bf56ab50, line=12
+    objectId=0x7bf56ab80, line=12
+    objectId=0x7bf551df0, line=13
+    objectId=0x7bf56ab40, line=13
+    objectId=0x7be068c80, line=13
+    objectId=0x7bf56ab50, line=13
+    objectId=0x7bf56ab80, line=13
+    objectId=0x7bfa52910, line=14
+    objectId=0x7be068c80, line=14
+    objectId=0x7bf551df0, line=14
+    objectId=0x7bf56a430, line=14
+    objectId=0x7bfa52910, line=15
+    objectId=0x7be068c80, line=15
+    objectId=0x7bfaf9600, line=16
+    objectId=0x7be068c80, line=16
+    objectId=0x7bfa52910, line=16
+    objectId=0x7bfa52750, line=17
+    objectId=0x7bfafc2d8, line=17
+    objectId=0x7bfafe908, line=17
+    objectId=0x7bfaf9600, line=17
+    objectId=0x7bfa2aac8, line=18
+    objectId=0x7bfa2ad28, line=18
+    objectId=0x7bfa2aac8, line=19
+    objectId=0x7bfa29aa0, line=19
+    objectId=0x7bfa295b0, line=20
+    objectId=0x7bfa29aa0, line=20
+    objectId=0x7bfa2aac8, line=20
+    objectId=0x7bfa2ac80, line=20
+    objectId=0x7bfa2ac98, line=20
+
+Thread 0x7be60e078
+  at java.net.SocketInputStream.socketRead0(Ljava/io/FileDescriptor;[BIII)I (Native Method)
+  at java.net.SocketInputStream.socketRead(Ljava/io/FileDescriptor;[BIII)I (SocketInputStream.java:116)
+  at java.net.SocketInputStream.read([BIII)I (SocketInputStream.java:171)
+  at java.net.SocketInputStream.read([BII)I (SocketInputStream.java:141)
+  at sun.nio.cs.StreamDecoder.readBytes()I (StreamDecoder.java:284)
+  at sun.nio.cs.StreamDecoder.implRead([CII)I (StreamDecoder.java:326)
+  at sun.nio.cs.StreamDecoder.read([CII)I (StreamDecoder.java:178)
+  at java.io.InputStreamReader.read([CII)I (InputStreamReader.java:184)
+  at java.io.BufferedReader.fill()V (BufferedReader.java:161)
+  at java.io.BufferedReader.readLine(Z)Ljava/lang/String; (BufferedReader.java:324)
+  at java.io.BufferedReader.readLine()Ljava/lang/String; (BufferedReader.java:389)
+  at com.intellij.rt.execution.application.AppMainV2$1.run()V (AppMainV2.java:64)
+
+  locals:
+    objectId=0x7be60e1f8, line=1
+    objectId=0x7be60e228, line=1
+    objectId=0x7be6169f8, line=1
+    objectId=0x7be60e1f8, line=2
+    objectId=0x7be6169f8, line=2
+    objectId=0x7be60e228, line=2
+    objectId=0x7be60e1f8, line=3
+    objectId=0x7be6169f8, line=3
+    objectId=0x7be60e248, line=4
+    objectId=0x7be60e248, line=5
+    objectId=0x7be61a9c8, line=5
+    objectId=0x7be60e278, line=5
+    objectId=0x7be60e2a8, line=5
+    objectId=0x7be60e248, line=6
+    objectId=0x7be61a9c8, line=6
+    objectId=0x7be60e2c0, line=6
+    objectId=0x7be60e2c0, line=7
+    objectId=0x7be61a9c8, line=7
+    objectId=0x7be60e2d8, line=8
+    objectId=0x7be60e2d8, line=9
+    objectId=0x7be60e2c0, line=9
+    objectId=0x7be60e2d8, line=10
+    objectId=0x7be60e078, line=11
+    objectId=0x7be60e308, line=11
+    objectId=0x7be60e2d8, line=11
+
+Thread 0x7be6162a8
+
+  locals:
+
+Thread 0x7be60e8c8
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (ReferenceQueue.java:143)
+  at java.lang.ref.ReferenceQueue.remove()Ljava/lang/ref/Reference; (ReferenceQueue.java:164)
+  at java.lang.ref.Finalizer$FinalizerThread.run()V (Finalizer.java:209)
+
+  locals:
+    objectId=0x7be609020, line=1
+    objectId=0x7be609040, line=1
+    objectId=0x7be609020, line=2
+    objectId=0x7be60e8c8, line=3
+    objectId=0x7be60ea48, line=3
+
+Thread 0x7be60ead0
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.Object.wait()V (Object.java:502)
+  at java.lang.ref.Reference.tryHandlePending(Z)Z (Reference.java:191)
+  at java.lang.ref.Reference$ReferenceHandler.run()V (Reference.java:153)
+
+  locals:
+    objectId=0x7be60ec48, line=1
+    objectId=0x7be60ec48, line=2
+    objectId=0x7be60ead0, line=3
+
+Thread 0x7be635b90
+  at sun.security.provider.DigestBase.engineDigest()[B (DigestBase.java:158)
+  at java.security.MessageDigest$Delegate.engineDigest()[B (MessageDigest.java:592)
+  at java.security.MessageDigest.digest()[B (MessageDigest.java:365)
+  at sun.security.provider.SecureRandom.engineNextBytes([B)V (SecureRandom.java:244)
+  at sun.security.provider.NativePRNG$RandomIO.implNextBytes([B)V (NativePRNG.java:534)
+  at sun.security.provider.NativePRNG$RandomIO.access$400(Lsun/security/provider/NativePRNG$RandomIO;[B)V (NativePRNG.java:331)
+  at sun.security.provider.NativePRNG.engineNextBytes([B)V (NativePRNG.java:220)
+  at java.security.SecureRandom.nextBytes([B)V (SecureRandom.java:468)
+  at java.util.UUID.randomUUID()Ljava/util/UUID; (UUID.java:145)
+  at com.lixiangyu.lee.jvm.HeapMemoryOOM.main([Ljava/lang/String;)V (HeapMemoryOOM.java:19)
+
+  locals:
+    objectId=0x7be64ca60, line=0
+    objectId=0x7be60f4a0, line=2
+    objectId=0x7be60f480, line=3
+    objectId=0x7bf57fb08, line=3
+    objectId=0x7be4edb80, line=4
+    objectId=0x7bf57fb08, line=4
+    objectId=0x7bf57fb08, line=8
+
